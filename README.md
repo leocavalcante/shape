@@ -1,6 +1,10 @@
 # shape [![CircleCI](https://circleci.com/gh/leocavalcante/shape.svg?style=svg)](https://circleci.com/gh/leocavalcante/shape)
 Run-time type checks against plain old PHP arrays.
 
+```bash
+composer require leocavalcante/shape
+```
+
 ## Why
 
 ### Validate basic data structures
