@@ -40,12 +40,12 @@ class Shape
             if (is_object($value)) {
                 if (! ($value instanceof $expectedType)) {
                     throw new TypeError(
-                    sprintf(
-                        'Key %s passed to shape() must be of the type %s, %s given',
-                        $key,
-                        $expectedType,
-                        get_class($value)
-                    )
+                        sprintf(
+                            'Key %s passed to shape() must be of the type %s, %s given',
+                            $key,
+                            $expectedType,
+                            get_class($value)
+                        )
                     );
                 }
 
