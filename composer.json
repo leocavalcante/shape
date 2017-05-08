@@ -15,8 +15,12 @@
     "minimum-stability": "stable",
     "require": {},
     "autoload": {
+        "files": [
+            "src/shape.php"
+        ]
+    },
+    "autoload-dev": {
         "psr-4": {
-            "Shape\\": "src/",
             "Shape\\Test\\": "tests/"
         }
     }
