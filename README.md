@@ -43,7 +43,21 @@ var_dump(string_int_tuple(['one', 1])); // bool(true)
 var_dump(string_int_tuple(['one', 'two'])); // TypeError: Key 1 passed to shape() must be of the type integer, string given
 ```
 
-## More
+### `shape()` function returns a Closure, so you can easily use it to assert vector arrays
+
+```php
+use const Shape\int;
+use function Shape\shape;
+
+$points = [
+    ['x' => 1, 'y' => 2],
+    ['x' => 3, 'y' => 4],
+];
+
+array_map(shape(['x' => int, 'y' => int]), $points);
+```
+
+## Inspiration
 
 * [Hack / HHVM Shapes](https://docs.hhvm.com/hack/shapes/introduction)
 * [Extremely Defensive PHP - Marco Pivetta](https://www.youtube.com/watch?v=8d2AtAGJPno)
