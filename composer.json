@@ -17,8 +17,12 @@
         "php": ">=7.0"
     },
     "autoload": {
+        "psr-4": {
+            "Shape\\": "src/"
+        },
         "files": [
-            "src/shape.php"
+            "src/consts.php",
+            "src/functions.php"
         ]
     },
     "autoload-dev": {
