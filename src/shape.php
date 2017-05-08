@@ -18,13 +18,13 @@ const Arr = 'array';
  * Returns a Closure to perform type checking against its first argument using the given $type.
  *
  * @param array|string $type
- * @return Closure -> array
+ * @return Closure -> array -> bool
  */
 function shape($type): Closure
 {
     $shape = is_string($type) && class_exists($type) ? get_class_vars($type) : $type;
 
-    return function (array $var) use ($shape) {
+    return function (array $var) use ($shape): bool {
         foreach ($shape as $key => $expectedType) {
             if (! array_key_exists($key, $var)) {
                 throw new TypeError(sprintf('Missing key: %s', $key));
@@ -60,5 +60,7 @@ function shape($type): Closure
                 );
             }
         }
+
+        return true;
     };
 }

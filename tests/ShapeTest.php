@@ -72,4 +72,19 @@ class ShapeTest extends TestCase
 
         shape(['foo' => Arr])(['foo' => null]);
     }
+
+    public function testInterface()
+    {
+        $this->assertTrue(shape(['foo' => FixtureInterface::class])(['foo' => new Fixture()]));
+    }
+
+    public function testAbstractClass()
+    {
+        $this->assertTrue(shape(['foo' => AbstractFixture::class])(['foo' => new Fixture()]));
+    }
+
+    public function testClass()
+    {
+        $this->assertTrue(shape(['foo' => Fixture::class])(['foo' => new Fixture()]));
+    }
 }
