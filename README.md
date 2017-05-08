@@ -2,7 +2,7 @@
 Run-time type checks against plain old PHP arrays.
 
 ```bash
-composer require leocavalcante/shape
+composer require leocavalcante/shape dev-master
 ```
 
 ## Why
