@@ -6,6 +6,9 @@ use TypeError;
 
 class Shape
 {
+    /** @access private */
+    const NULLABLE_PREFIX = '?';
+
     private $shape;
     private $var;
 
@@ -33,8 +36,11 @@ class Shape
 
             $value = $this->var[$key];
 
-            if (is_null($value) && $expectedType[0] === '?') {
-                continue;
+            if ($expectedType[0] === self::NULLABLE_PREFIX) {
+                $expectedType = substr($expectedType, 1);
+                if ($value === null) {
+                    continue;
+                }
             }
 
             if (is_object($value)) {
